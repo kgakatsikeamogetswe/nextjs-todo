@@ -6,3 +6,14 @@ const page = ({params}) => {
 }
 
 export default page
+
+
+//static route
+
+export async function getStaticParams() {
+    return [
+        {id: "1"},
+        {id: "2"},
+        {id: "3"},
+    ]
+}
