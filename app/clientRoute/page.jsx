@@ -12,4 +12,5 @@ const clientPage = () => {
   )
 }
 
+
 export default clientPage
