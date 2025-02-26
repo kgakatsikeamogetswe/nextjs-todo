@@ -21,11 +21,21 @@ export async function GET(){
 }
 
 export async function DELETE(request){
+
     const data = await request.json();
 
     todos = todos.filter(todo => todo.id !== data.id)
 
-    console.log(data)
+    console.log("debug", todos) //debuging
 
     return NextResponse.json({todos})
+}
+
+export async function POST(request){
+    const data = await request.json();
+
+    const newTodo = {id: todos.length + 1, name: data.todoName};
+    todos.push(newTodo);
+
+    return NextResponse.json({todos});
 }
