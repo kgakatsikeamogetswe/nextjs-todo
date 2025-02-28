@@ -1,19 +1,10 @@
-//dynamic route
-const page = ({params}) => {
+async function TodosPage(){
+  const response = await fetch('http://localhost:3000/api/todos')
+  const data = await response.json()
+  console.log(data)
   return (
-    <div>Param ID: {params.id} </div>
+    <div>todo Page</div>
   )
 }
 
-export default page
-
-
-//static route
-
-export async function getStaticParams() {
-    return [
-        {id: "1"},
-        {id: "2"},
-        {id: "3"},
-    ]
-}
+export default TodosPage
