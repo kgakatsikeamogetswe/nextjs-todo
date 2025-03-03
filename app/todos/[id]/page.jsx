@@ -1,3 +1,5 @@
+import DeleteTodo from "@/components/DeleteTodo";
+
 async function TodosPage(){
   const response = await fetch('http://localhost:3000/api/todos', {
     cache: 'no-store',
@@ -23,7 +25,7 @@ async function TodosPage(){
                 <td className="py-3 px-6">{todo.id}</td>
                 <td className="py-3 px-6">{todo.name}</td>
                 <td className="py-3 px-6">
-                  <button>Delete</button>
+                  <DeleteTodo id={todo.id} />
                 </td>
             </tr>
           ))}
